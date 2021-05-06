@@ -288,6 +288,7 @@ img {
   transform: translate(-50%, -50%) scale(0.5);
   transition: transform 250ms var(--cubic-bezier), opacity 250ms var(--cubic-bezier);
 }
+
 .solutions-modal-close-button {
   position: absolute;
   top: 8px;
@@ -436,23 +437,27 @@ img {
   border-radius: 50%;
   background-color: var(--white-background);
 
-  transition: background-color 250ms var(--cubic-bezier);
+  transform: translateY(0);
+  transition: transform 250ms var(--cubic-bezier), background-color 250ms var(--cubic-bezier);
 }
 
 .team-social-network-link:hover,
 .team-social-network-link:focus {
   background-color: var(--accent-color);
+  transform: translateY(-5%);
 }
 
 .team-social-network-link:hover .team-social-network-icon,
 .team-social-network-link:focus .team-social-network-icon {
   fill: var(--alt-title-color);
+  transform: translateY(-3%);
 }
 
 .team-social-network-icon {
   fill: var(--svg-icon-color);
 
-  transition: fill 250ms var(--cubic-bezier);
+  transform: translateY(0);
+  transition: transform 250ms var(--cubic-bezier), fill 250ms var(--cubic-bezier);
 }
 
 /*Clients*/
@@ -471,22 +476,25 @@ img {
   height: 92px;
   border: 1px solid var(--svg-icon-color);
   border-radius: 4px;
-
-  transition: border 250ms var(--cubic-bezier);
+  transform: translateY(0);
+  transition: transform 250ms var(--cubic-bezier), border 250ms var(--cubic-bezier);
 }
 .client-icon {
   fill: var(--svg-icon-color);
-
-  transition: fill 250ms var(--cubic-bezier);
+  transform: translateY(0);
+  transition: transform 250ms var(--cubic-bezier), fill 250ms var(--cubic-bezier);
 }
 
 .client-link:hover .client-icon,
 .client-link:focus .client-icon {
   fill: var(--accent-color);
+  transform: translateY(-3%);
 }
+
 .client-link:hover,
 .client-link:focus {
   border: 1px solid var(--accent-color);
+  transform: translateY(-5%);
 }
 
 /* Portfolio*/
@@ -579,13 +587,6 @@ img {
   transition: box-shadow 250ms var(--cubic-bezier);
 }
 
-.project-link:hover .projects-list-overlay,
-.project-link:focus .projects-list-overlay {
-  transform: translateY(0);
-  opacity: 1;
-  transition: transform 250ms var(--cubic-bezier), opacity 250ms var(--cubic-bezier);
-}
-
 .projects-thumb {
   position: relative;
   overflow: hidden;
@@ -606,6 +607,13 @@ img {
 
   transform: translateY(100%);
   opacity: 0;
+  transition: transform 250ms var(--cubic-bezier), opacity 250ms var(--cubic-bezier);
+}
+
+.project-link:hover .projects-overlay,
+.project-link:focus .projects-overlay {
+  transform: translateY(0);
+  opacity: 1;
   transition: transform 250ms var(--cubic-bezier), opacity 250ms var(--cubic-bezier);
 }
 
@@ -688,9 +696,11 @@ img {
 .footer-social-networks-text {
   font-weight: 700;
   text-transform: uppercase;
+  margin-top: 0px;
   margin-bottom: 20px;
   color: var(--alt-title-color);
 }
+
 .footer-social-networks-list {
   display: inline-flex;
 }
